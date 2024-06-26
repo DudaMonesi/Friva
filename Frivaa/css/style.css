@@ -1,0 +1,97 @@
+.navbar {
+  background: #240950; }
+  .navbar .navbar-brand img {
+    width: 50px; }
+  .navbar .nav-link {
+    font: 16px ", Inter, Arial";
+    color: #fff;
+    text-transform: uppercase; }
+    .navbar .nav-link:hover {
+      color: #e0e013; }
+  .navbar .navbar-nav .nav-link.show {
+    color: #e0e013; }
+  .navbar .dropdown-menu {
+    background: #240950;
+    border-radius: 0;
+    border-top: 5px solid #e0e013; }
+    .navbar .dropdown-menu .dropdown-item {
+      font: 20px ", Inter, Arial";
+      text-transform: uppercase;
+      color: #e0e013; }
+  .navbar .btn {
+    margin-left: 5px; }
+
+body {
+  font-family: Roboto !important;
+  background-color: #492a7a;
+  color: white !important; }
+
+.btn {
+  font: 20px ", Inter, Arial";
+  border-radius: 0; }
+
+#main {
+  width: 100%;
+  margin: 50px auto;
+  padding: 10px; }
+  #main .card-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    #main .card-flex .card-info {
+      background-color: #002849;
+      width: 90%;
+      margin: 10px auto;
+      border-radius: 20px;
+      transition: 400ms !important; }
+      #main .card-flex .card-info:hover {
+        transform: scale(1.05) !important; }
+      #main .card-flex .card-info a {
+        text-decoration: none; }
+        #main .card-flex .card-info a img {
+          border-radius: 20px;
+          width: 100%; }
+    #main .card-flex .card-descricao {
+      margin: 10px 0; }
+      #main .card-flex .card-descricao p {
+        color: #e0e013;
+        text-align: center; }
+
+@media (min-width: 990px) {
+  #main {
+    width: 990px;
+    margin: auto; }
+    #main .card-flex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      #main .card-flex .card-info {
+        background-color: #002849;
+        width: 31%;
+        margin: 10px;
+        border-radius: 20px; }
+        #main .card-flex .card-info a {
+          text-decoration: none; }
+          #main .card-flex .card-info a img {
+            border-radius: 20px;
+            width: 100%; }
+      #main .card-flex .card-descricao {
+        margin: 10px 0; }
+        #main .card-flex .card-descricao p {
+          color: #e0e013;
+          text-align: center; }
+    #main .card-descri {
+      width: 60%;
+      margin: 20px auto;
+      background-color: #002849;
+      padding: 10px;
+      border-radius: 20px; }
+    #main .card-descrii {
+      width: 60%;
+      margin: 20px auto;
+      background-color: #002849;
+      padding: 10px;
+      border-radius: 20px; } }
+
+/*# sourceMappingURL=style.css.map */
