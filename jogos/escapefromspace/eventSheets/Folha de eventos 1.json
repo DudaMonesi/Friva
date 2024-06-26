@@ -1,0 +1,59 @@
+{
+	"name": "Folha de eventos 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 760696704790256
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 738410782583394,
+					"parameters": {
+						"seconds": "1000"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 614210232161951,
+					"parameters": {
+						"layout": "Layout I"
+					}
+				}
+			],
+			"sid": 406306007434312
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 816233863973791,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 449200283870740,
+					"parameters": {
+						"layout": "Layout II"
+					}
+				}
+			],
+			"sid": 696813192418126
+		}
+	],
+	"sid": 328319345331038
+}

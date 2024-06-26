@@ -1,0 +1,33 @@
+{
+	"name": "Folha de eventos I",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 900917592303879,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [],
+			"sid": 262177448253616
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 130143839596369
+				}
+			],
+			"actions": [],
+			"sid": 776195061852903
+		}
+	],
+	"sid": 554999102390067
+}

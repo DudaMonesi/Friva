@@ -1,0 +1,303 @@
+{
+	"name": "Folha de eventos IV",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 710447276474100
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "Sprite2",
+					"sid": 153923708452040,
+					"behaviorType": "Atrelar",
+					"parameters": {
+						"pin-to": "fogueteAzul",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 506176682050459
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 468902131693840,
+					"parameters": {
+						"interval-seconds": "0.3"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 934786825803980,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 848742324836791,
+							"parameters": {
+								"object": "spaw"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "spaw",
+							"sid": 463741323375516,
+							"parameters": {
+								"object": "rock",
+								"layer": "\"front\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "rock",
+							"sid": 631000490244608,
+							"parameters": {
+								"frame-number": "int(random(0,4))"
+							}
+						}
+					],
+					"sid": 390331180149500
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "fogueteAzul",
+					"sid": 121418875555694,
+					"parameters": {
+						"object": "rock"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 191712919374820
+				}
+			],
+			"sid": 480061623749150
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Teclado",
+					"sid": 112196414829792,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [],
+			"sid": 570380513450298,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 520327465017835,
+							"parameters": {
+								"interval-seconds": "0.1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "fogueteAzul",
+							"sid": 242718973861736,
+							"parameters": {
+								"object": "Sprite12",
+								"layer": "\"front\"",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Sprite12",
+							"sid": 685079035922953,
+							"parameters": {
+								"angle": "-90"
+							}
+						}
+					],
+					"sid": 944029319137599
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Sprite12",
+					"sid": 395423933675507
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite12",
+					"sid": 135891010776551
+				}
+			],
+			"sid": 983043267697871
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite12",
+					"sid": 374923831229586,
+					"parameters": {
+						"object": "rock"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite12",
+					"sid": 875242517388235
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "rock",
+					"sid": 483681843732957,
+					"parameters": {
+						"instance-variable": "vida",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 282284506823236
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "rock",
+					"sid": 766725099105818,
+					"parameters": {
+						"instance-variable": "vida",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "rock",
+					"sid": 148973506047782,
+					"parameters": {
+						"object": "Partículas",
+						"layer": "\"front\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "rock",
+					"sid": 910750461874984
+				}
+			],
+			"sid": 860301261567037
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 895725151943911
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 188913397363942,
+					"parameters": {
+						"seconds": "40"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 698166646500778,
+					"parameters": {
+						"layout": "Layout V"
+					}
+				}
+			],
+			"sid": 166340246385254
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 126374487225296
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Áudio",
+					"sid": 584388454660058
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 266213050705983,
+					"parameters": {
+						"audio-file": "Redbone - Come and Get Your Love (Single Edit - Audio)",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 935175202434258
+		}
+	],
+	"sid": 738599439367494
+}

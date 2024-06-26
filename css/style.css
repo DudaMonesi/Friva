@@ -1,0 +1,28 @@
+.navbar {
+  background: #240950; }
+  .navbar .navbar-brand img {
+    height: 60px; }
+  .navbar .nav-link {
+    font: 22px ", Inter, Arial";
+    color: #fff;
+    text-transform: uppercase; }
+    .navbar .nav-link:hover {
+      color: #B18C33; }
+  .navbar .navbar-nav .nav-link.show {
+    color: #B18C33; }
+  .navbar .dropdown-menu {
+    background: #240950;
+    border-radius: 0;
+    border-top: 5px solid #B18C33; }
+    .navbar .dropdown-menu .dropdown-item {
+      font: 20px ", Inter, Arial";
+      text-transform: uppercase;
+      color: #B18C33; }
+  .navbar .btn {
+    margin-left: 5px; }
+
+.btn {
+  font: 20px ", Inter, Arial";
+  border-radius: 0; }
+
+/*# sourceMappingURL=style.css.map */

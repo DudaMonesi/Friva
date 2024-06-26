@@ -1,0 +1,168 @@
+{
+	"name": "Folha de eventos II",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 962577230762853
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "Sprite2",
+					"sid": 804910023897157,
+					"behaviorType": "Atrelar",
+					"parameters": {
+						"pin-to": "fogueteAzul",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 245985423276962
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 133423114626545,
+					"parameters": {
+						"interval-seconds": "0.4"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 236209974262680,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 232070800073535,
+							"parameters": {
+								"object": "spaw"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "spaw",
+							"sid": 573640364601574,
+							"parameters": {
+								"object": "rock",
+								"layer": "\"game\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "rock",
+							"sid": 966874514975519,
+							"parameters": {
+								"frame-number": "int(random(0,4))"
+							}
+						}
+					],
+					"sid": 236814884656856
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "fogueteAzul",
+					"sid": 316025902029231,
+					"parameters": {
+						"object": "rock"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 707366658266567
+				}
+			],
+			"sid": 139981519978829
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 887891095911889
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 427849087120970
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 388304485778040,
+					"parameters": {
+						"audio-file": "Redbone - Come and Get Your Love (Single Edit - Audio)",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 517608165464947
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 374133695263451
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 326900586319452,
+					"parameters": {
+						"seconds": "40.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 456571736405284,
+					"parameters": {
+						"layout": "Layout 3"
+					}
+				}
+			],
+			"sid": 835936382258641
+		}
+	],
+	"sid": 114224049791591
+}

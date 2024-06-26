@@ -1,0 +1,35 @@
+{
+	"name": "Folha de eventos 3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 584745687853217
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 715146070011304,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 186186789067954,
+					"parameters": {
+						"layout": "Layout IV"
+					}
+				}
+			],
+			"sid": 954789096314296
+		}
+	],
+	"sid": 683798927387850
+}

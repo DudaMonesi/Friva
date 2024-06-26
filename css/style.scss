@@ -1,0 +1,40 @@
+$primary: #240950;
+$secondary: #B18C33;
+$font1: ", Inter, Arial";
+$font2: "Roboto Condensed", Arial, Tahoma;
+
+.navbar{
+    background: $primary;
+    .navbar-brand img{
+        height: 60px;
+    }
+    .nav-link{
+        font: 22px $font1;
+        color: #fff;
+        text-transform: uppercase;
+        &:hover{
+            color: $secondary;
+        }
+    }
+    .navbar-nav .nav-link.show {
+        color: $secondary;
+    }
+    .dropdown-menu {
+        background: $primary;
+        border-radius: 0;
+        border-top: 5px solid $secondary;
+        .dropdown-item {
+            font: 20px $font1;
+            text-transform: uppercase;
+            color: $secondary;
+        }
+    }
+    .btn {
+        margin-left: 5px;
+    }
+}
+
+.btn {
+    font: 20px $font1;
+    border-radius: 0;
+}
