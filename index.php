@@ -7,6 +7,7 @@
   <title>Friva</title>
   <meta name="description" content="Games feitos para você, jogos que te hipnotizam">
   <meta name="keywords" content="games, jogos, lançamentos">
+  <base href="http://localhost/Frivaa/api">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,16 +24,7 @@
 </head>
 
 <body>
-   <?php
-        //buscar os dados da API de games
-        $url = "https://professorburnes.com.br/stem/api/games.php";
-        //importar os dados da API
-        $dadosApi = file_get_contents($url);
-        //transformar de JSON para array ou objeto
-        $dadosJogos = json_decode($dadosApi);
-
-        //print_r($dadosJogos);
-    ?>
+   
 
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -51,35 +43,31 @@
                     <li class="nav-item">
                         <a class="nav-link" href="quem-somos">Quem Somos</a>
                     </li>
+          
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Games
-                        </a>
-                        <ul class="dropdown-menu">
-                            <?php
-                                foreach($dadosJogos as $dados) {
-                                    echo "<li><a class='dropdown-item' href='game/{$dados->id}'>{$dados->nome}</a>
-                                    </li>";
-                                }
-                            ?>
-                        </ul>
-                    </li>
-            <ul class="dropdown-menu">
-                 <?php
-                                foreach($dadosJogos as $dados) {
-                                    echo "<li><a class='dropdown-item' href='game/{$dados->id}'>{$dados->nome}</a>
-                                    </li>";
-                                }
-                            ?>
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Games
+          </a>
+          <ul class="dropdown-menu">
+          <?php
+            $dadosApi = file_get_contents("http://localhost/Frivaa/api/jogo.php");
+            $dadosApi = json_decode($dadosApi);
+
+            foreach ($dadosApi as $dados) {
+              ?>
+              <li><a class="dropdown-item" href="mais/<?= $dados->id?>"><?php echo $dados->nome?></a></li>
+
+              <?php
+            };
+            ?>
+
+            
+            
+           
+          </ul>
+        </li>
+        
+      </ul>
        <div class="d-flex">
         <a href=https://www.instagram.com/maria_monesi47/ title="Contato" class="btn btn-info">
           <i class="fas fa-envelope"></i>
@@ -89,12 +77,39 @@
       </div>
     </div>
   </nav>
+  <main>
 
-  
+    <?php
 
-  <script src="js/bootstrap.budle.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/fslightbox.js"></script> 
+    if (isset($_GET["param"])) {
+      $param = $_GET["param"];
+      $p = explode("/", $param);
+    }
+
+    $page = $p[0] ?? "home";
+    $jogo = $p[1] ?? NULL;
+
+    if ($page == "jogo") {
+      $pagina = "jogo/{$jogo}.php";
+
+    } else {
+      $pagina = "paginas/{$page}.php";
+    }
+
+    if (file_exists($pagina)) {
+      include $pagina;
+    } else {
+      include "paginas/erro.php";
+    }
+
+    ?>
+    </main>
+
+  <footer>
+
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

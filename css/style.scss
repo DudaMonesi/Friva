@@ -1,15 +1,15 @@
 $primary: #240950;
-$secondary: #B18C33;
+$secondary: #e0e013;
 $font1: ", Inter, Arial";
 $font2: "Roboto Condensed", Arial, Tahoma;
 
 .navbar{
     background: $primary;
     .navbar-brand img{
-        height: 60px;
+        width: 50px ;
     }
     .nav-link{
-        font: 22px $font1;
+        font: 16px $font1;
         color: #fff;
         text-transform: uppercase;
         &:hover{
@@ -33,8 +33,106 @@ $font2: "Roboto Condensed", Arial, Tahoma;
         margin-left: 5px;
     }
 }
+body {
+    font-family: Roboto !important;
+    background-color: #492a7a;
+    color: white !important;
+}
 
 .btn {
     font: 20px $font1;
     border-radius: 0;
+}
+#main {
+    width:100%;
+    margin:50px auto;
+    padding: 10px;
+    & .card-flex {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+            & .card-info {
+                background-color: #002849;
+                width:90% ;
+
+                margin: 10px auto;
+                border-radius: 20px;
+                transition: 400ms !important;
+                &:hover {
+                    transform: scale(1.05) !important;
+                }
+                    a {
+                        text-decoration: none;
+                        img {
+                            border-radius: 20px;
+                            width: 100%;
+                        }
+                    }
+            }
+            .card-descricao {
+                margin: 10px 0;
+                p {
+                    color: $secondary;
+                    text-align: center;
+                }
+                .acenter  {
+                    display: flex;
+                    justify-content: center;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        background: #0064b6;
+                        padding: 5PX 10PX ;
+                        border-radius: 20px;
+                    }
+                }
+            }
+    }
+}
+
+
+@media (min-width:990px) {
+    #main {
+        width:990px;
+        margin: auto;
+        & .card-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+                & .card-info {
+                    background-color: #002849;
+                    width: 31%;
+                    margin: 10px;
+                    border-radius: 20px;
+                        a {
+                            text-decoration: none;
+                            img {
+                                border-radius: 20px;
+                                width: 100%;
+                            }
+                        }
+                }
+                .card-descricao {
+                    margin: 10px 0;
+                    p {
+                        color: $secondary;
+                        text-align: center;
+                    }
+                }
+        }
+        .card-descri {
+            width: 60%;  margin: 20px auto;
+            background-color: #002849;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .card-descrii {
+            width: 60%;  margin: 20px auto;
+            background-color: #002849;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    
+    }
 }
